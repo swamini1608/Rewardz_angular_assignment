@@ -71,8 +71,8 @@
   background-color: white;
   border: none;
   border-radius: 10px;
-  height: 18em;
-  width: 16em;
+  height: 20em;
+  width: 35%;
   overflow-y: auto;
 }
 .card-container {
@@ -124,6 +124,7 @@
   text-align: center; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   overflow: hidden; /* Prevents content from escaping the card */
+  position: relative;
 }
 @media (max-width: 700px) {
   .item-card {
@@ -276,18 +277,45 @@
     border-top: 1px solid #ddd; /* Thin line for the divider */
 }
 .product-image {
-  max-width: 80%; /* Constrain image width to prevent overflow */
-  height: auto; /* Maintain aspect ratio */
+    max-width: 62%;
+    max-height: 45%;
   margin: 0 auto; /* Centers the image horizontally */
   border-radius: 8%; /* Rounded corners for the image */
 }
-
+.product-name{
+    position: relative;
+    top:-7px;
+}
 .product-name h5 {
   font-size: 1.2em;
   margin: 0.5em 0;
   font-weight: bold;
 }
-.date {
+.date-div {
     position: relative;
-    top: -20px;
+    bottom: 8%;
+  }
+
+  .out-of-stock-badge{
+    position: absolute; /* Absolute positioning */
+    padding: 0px 6px;
+  top: 1em; /* Adjust as needed */
+  right: 1em; /* Adjust position relative to the card */
+  border: 1px solid red;
+  background-color: white;
+  border-radius: 8px;
+  max-width: 10em;
+  height: 2em;
+  display: flex; /* Centers text inside */
+  align-items: center; /* Centers text vertically */
+  justify-content: center; /* Centers text horizontally */
+  font-size: 12px;
+  color: red;
+  }
+
+  .high-demand-badge{
+    color: green;
+    border: 1px solid green;
+    max-width: 5em;
+    height: 4em;
   }

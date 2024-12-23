@@ -58,35 +58,31 @@
     </div>
     <div class="card-container">
       <span class="card-contianer-header">
-        <h3 class="result-found">21 results found</h3>
+        <h3 class="result-found">{{totalLoadedItems?totalLoadedItems:0}} results found</h3>
         <button class="sort-btn" (click)="openOverlay()">Sort</button>
       </span>
-      <div class="card-holder">
-        <div class="item-card">
-            <img class="product-image "
-            alt="company Logo"
-            src="../assets/images/cpmny-logo.png"
+      <div *ngIf="products.length>0" class="card-holder">
+        <div *ngFor="let product of products" class="item-card">
+            <img class="product-image"
+            alt="product-image"
+            [src]="product.display_img_url"
           />
-          <div class="product-name"><h5>Abbbbb</h5></div>
-          <div>5 points</div>
+          <div class="product-name">
+            <h5>{{product.name}}</h5> 
+             <div>{{product.points}} points</div>
+            </div>
+         
+          <div *ngIf="isOutOfStock(product)" class="out-of-stock-badge">Out of stock</div>
+          <div *ngIf="isOnHighDemand(product)" class="out-of-stock-badge high-demand-badge">
+            High Demand
+            (only {{product.quantity}} left)</div>
+
+          <div class="date-div">
           <hr class="divider">
-          <span class="date">
-          <span style="color: gray;">Valid date:</span><span>31-20-20</span>
-          </span>
-        </div>
-        <div class="item-card"></div>
-        <div class="item-card"></div>
-        <div class="item-card">
-            <img class="product-image "
-            alt="company Logo"
-            src="../assets/images/cpmny-logo.png"
-          />
-          <div class="product-name"><h5>Abbbbb</h5></div>
-          <div>5 points</div>
-          <hr class="divider">
-          <span class="date">
-          <span style="color: gray;">Valid date:</span><span>31-20-20</span>
-          </span>
+          
+          <span style="color: gray;">Valid date:</span><span>{{product.valid_until | date: 'dd-MM-yyyy' }}</span>
+          </div>
+          
         </div>
       </div>
     </div>

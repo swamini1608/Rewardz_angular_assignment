@@ -1,0 +1,58 @@
+{
+  "products":[
+  {
+    "pk": 111,
+    "name": "Camera",
+    "points": 25,
+    "display_img_url": "../assets/images/camera.jpg",
+    "quantity": 14,
+    "valid_until": "2024-12-31T00:00:00",
+    "low_quantity": 10
+  },
+  {
+    "pk": 222,
+    "name": "Books",
+    "points": 15,
+    "display_img_url": "../assets/images/books.jpg",
+    "quantity": 11,
+    "valid_until": "2024-12-31T00:00:00",
+    "low_quantity": 10
+  },
+  {
+    "pk": 333,
+    "name": "Crayons",
+    "points": 10,
+    "display_img_url": "../assets/images/crayons.jpg",
+    "quantity": 14,
+    "valid_until": "2024-12-31T00:00:00",
+    "low_quantity": 10
+  },
+  {
+    "pk": 444,
+    "name": "flowers",
+    "points": 34,
+    "display_img_url": "../assets/images/flowers.jpg",
+    "quantity": 14,
+    "valid_until": "2024-12-31T00:00:00",
+    "low_quantity": 10
+  },
+  {
+    "pk": 555,
+    "name": "Headphones",
+    "points": 60,
+    "display_img_url": "../assets/images/headphones.jpg",
+    "quantity": 0,
+    "valid_until": "2024-12-31T00:00:00",
+    "low_quantity": 10
+  },
+  {
+    "pk": 66,
+    "name": "Lipstick",
+    "points": 150,
+    "display_img_url": "../assets/images/lipstick.jpg",
+    "quantity": 4,
+    "valid_until": "2024-12-31T00:00:00",
+    "low_quantity": 10
+  }
+]
+}
