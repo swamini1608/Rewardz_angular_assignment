@@ -1,0 +1,293 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2% 6%;
+}
+.search-box {
+  display: flex;
+  border: 2px solid white;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0.5em 0;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  padding: 5px;
+  outline: none;
+  font-size: 14px;
+  background: url("../../assets/images/icons8-search-100.png") no-repeat 2px
+    center;
+  background-size: 16px 18px;
+  padding-left: 24px;
+  background-color: white;
+}
+
+.search-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+.applied-filter {
+  display: flex;
+  align-items: baseline;
+}
+.selected-category {
+  list-style: none;
+}
+.list-item {
+  display: flex;
+  padding: 2px 8px;
+  background-color: #f0eeee;
+  border-radius: 6px;
+  margin: 12px;
+  width: 6em;
+  height: 2em;
+  align-items: center;
+}
+.cancel-btn {
+  border: none;
+  cursor: pointer;
+
+  margin-left: auto;
+}
+.categories-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  height: 18em;
+  width: 16em;
+  overflow-y: auto;
+}
+.card-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden; /* Hides vertical scrollbar */
+  overflow-x: hidden; /* Hides horizontal scrollbar at start */
+}
+.card-contianer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0em 1em;
+}
+/* .result-found{
+    justify-content: flex-start;
+  } */
+.sort-btn {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.5em;
+  background-color: maroon;
+  color: white;
+  height: 2.5em;
+  text-align: center;
+  width: 5em;
+  margin-left: auto;
+}
+.card-holder {
+  display: flex;
+  justify-content: space-between; /* Ensures equal spacing between cards */
+  flex-wrap: wrap; /* Allows cards to wrap to the next row on smaller screens */
+  gap: 1em;
+  overflow-y: auto;
+}
+.item-card {
+  display: flex;
+  flex-direction: column; /* Align content vertically */
+  background-color: white;
+  border: 1px solid #ddd; /* Optional: Adds a subtle border */
+  border-radius: 10px;
+  height: 21em;
+  width: calc(33.33% - 2em); /* Dynamic width for 3 cards in a row */
+  margin-left: 1em; /* Adjust spacing */
+  padding: 1em;
+  box-sizing: border-box; /* Includes padding in width/height calculation */
+  justify-content: space-between; 
+  text-align: center; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  overflow: hidden; /* Prevents content from escaping the card */
+}
+@media (max-width: 700px) {
+  .item-card {
+    width: 100%;
+  }
+}
+.categories-header {
+  margin-left: 2em;
+}
+
+/* accordion */
+/* accordion */
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0em 5px;
+}
+
+.accordion-item {
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 15px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: #eaeaea;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.status-circle {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-left: auto;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.status-circle.active {
+  background-color: red; /* Green color for selected */
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.accordion-content {
+  padding: 15px;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.accordion-content p {
+  margin: 0;
+}
+
+/* Overlay Container */
+.overlay-container {
+  position: fixed;
+  position: fixed;
+  top: 10%;
+  bottom: 10%;
+  right: 0;
+  width: 33.3%;
+  height: 80%;
+
+  display: flex;
+
+  z-index: 1000;
+}
+
+/* Overlay Panel */
+.overlay-panel {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  height: 100%;
+  width: 90%; /* Responsive width */
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.filter-by {
+  display: flex;
+  justify-content: space-between;
+}
+.sort-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.order-btn {
+  margin: 1em;
+  border: 1px solid red;
+  background-color: white;
+  color: grey;
+}
+.order-btn:hover {
+  background-color: red;
+}
+.apply-btn {
+  width: 100%;
+  margin-top: auto;
+  text-align: center;
+}
+.divider {
+    width: 80%;
+    margin: 0.5em auto; /* Adjust margin to control space above and below */
+    border: 0;
+    border-top: 1px solid #ddd; /* Thin line for the divider */
+}
+.product-image {
+  max-width: 80%; /* Constrain image width to prevent overflow */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 auto; /* Centers the image horizontally */
+  border-radius: 8%; /* Rounded corners for the image */
+}
+
+.product-name h5 {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+  font-weight: bold;
+}
+.date {
+    position: relative;
+    top: -20px;
+  }

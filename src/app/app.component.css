@@ -57,12 +57,11 @@
   }
 
   .content {
-    display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
+    
+     margin: 82px auto 32px;
+    padding: 0 16px; 
+  
+    
   }
 
   svg.material-icons {
@@ -217,17 +216,7 @@
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   }
 
-  footer {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    line-height: 20px;
-  }
-
-  footer a {
-    display: flex;
-    align-items: center;
-  }
+  
 
   .github-star-badge {
     color: #24292e;
@@ -293,17 +282,12 @@
 
   .footer-div{
     display: flex;
-    justify-content: center;
-    gap:180px;
+        justify-content: space-between;
+        padding: 1em;
+        flex-wrap: wrap;
+    
   }
-  .grey-color{
-    color: grey;
-  }
-  .footer-sub-section{
-    display: flex;
-    flex-direction: column;
-  }
-  .about-section{
-    margin-top:7%;
-  }
+
+ 
+  
 

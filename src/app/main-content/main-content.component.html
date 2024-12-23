@@ -1,1 +1,115 @@
-<p>main-content works!</p>
+<div class="main-content">
+  <b>Search</b>
+
+  <div class="search-box">
+    <input type="text" class="search-input" placeholder="Search" />
+  </div>
+
+  <span class="applied-filter">
+    <b>Applied filters:</b>
+    <li class="list-item">e-voucher<button class="cancel-btn">x</button></li>
+    <li class="list-item">clear-filter<button class="cancel-btn">x</button></li>
+  </span>
+
+  <div class="categories-cards">
+    <div class="categories">
+      <h4 class="categories-header">Categories</h4>
+      <!-- accordion -->
+      <div class="accordion-container">
+        <div
+          *ngFor="let item of accordionItems; let i = index"
+          class="accordion-item"
+        >
+          <div
+            class="accordion-header"
+            [class.selected]="selectedAccordion === i"
+            (click)="toggleAccordion(i)"
+          >
+            <span class="icon" *ngIf="selectedAccordion === i">
+              <img
+                width="20"
+                height="20"
+                alt="company Logo"
+                src="../../assets/images/collapse.png"
+              />
+            </span>
+            <span class="icon" *ngIf="selectedAccordion != i">
+              <img
+                width="20"
+                height="20"
+                alt="company Logo"
+                src="../../assets/images/down.png"
+              />
+            </span>
+            <span>{{ item.title }}</span>
+            <div
+              class="status-circle"
+              [ngClass]="{ active: selectedAccordion === i }"
+            >
+            &#10003;
+            </div>
+          </div>
+          <div class="accordion-content" *ngIf="selectedAccordion === i">
+            <p>{{ item.content }}</p>
+          </div>
+        </div>
+      </div>
+      <!-- accordion -->
+    </div>
+    <div class="card-container">
+      <span class="card-contianer-header">
+        <h3 class="result-found">21 results found</h3>
+        <button class="sort-btn" (click)="openOverlay()">Sort</button>
+      </span>
+      <div class="card-holder">
+        <div class="item-card">
+            <img class="product-image "
+            alt="company Logo"
+            src="../assets/images/cpmny-logo.png"
+          />
+          <div class="product-name"><h5>Abbbbb</h5></div>
+          <div>5 points</div>
+          <hr class="divider">
+          <span class="date">
+          <span style="color: gray;">Valid date:</span><span>31-20-20</span>
+          </span>
+        </div>
+        <div class="item-card"></div>
+        <div class="item-card"></div>
+        <div class="item-card">
+            <img class="product-image "
+            alt="company Logo"
+            src="../assets/images/cpmny-logo.png"
+          />
+          <div class="product-name"><h5>Abbbbb</h5></div>
+          <div>5 points</div>
+          <hr class="divider">
+          <span class="date">
+          <span style="color: gray;">Valid date:</span><span>31-20-20</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- overlay panel -->
+  <div class="overlay-container" *ngIf="isVisible">
+    <div class="overlay-panel">
+      <button class="close-button" (click)="closeOverlay()">×</button>
+      <span class="filter-by">
+        <h4>FilterBy</h4>
+        <h4 style="color: orange;cursor: pointer;">Reset All</h4>
+    </span>
+    <hr class="divider">
+    <div class="sort-panel">
+        <h4>Sort</h4>
+        <span>
+        <button class="sort-btn order-btn">A-Z</button>
+        <button class="sort-btn order-btn">Z-A</button>
+        </span>
+    </div>
+    <button class="sort-btn apply-btn">Apply</button>
+    
+    </div>
+  </div>
+   <!-- overlay panel -->
+</div>
